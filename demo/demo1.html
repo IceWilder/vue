@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="test">
+    	<input type="text"  v-model="parentMsg">
+        <child :msg="parentMsg"></child>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+    Vue.component('child', {
+        props: ['msg'],
+        template: '<span>{{msg}}</span>'
+    });
+    new Vue({
+        el: '#test',
+        data:{
+        	parentMsg:""
+        }
+    })
+    </script>
+</body>
+
+</html>
